@@ -11,7 +11,6 @@
 	<a href="https://github.com/smldr/lichtblick/contributors"><img src="https://img.shields.io/github/contributors/smldr/lichtblick?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
-<!-- Replace with a catwalk image of all four flavors: assets/preview.webp -->
 <p align="center">
 	<img src="assets/preview.webp"/>
 </p>
