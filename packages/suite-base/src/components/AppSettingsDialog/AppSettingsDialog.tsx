@@ -31,10 +31,14 @@ import { AppSetting } from "@lichtblick/suite-base/AppSetting";
 import { useStyles } from "@lichtblick/suite-base/components/AppSettingsDialog/AppSettingsDialog.style";
 import { APP_SETTINGS_ABOUT_ITEMS } from "@lichtblick/suite-base/components/AppSettingsDialog/constants";
 import { AppSettingsTab } from "@lichtblick/suite-base/components/AppSettingsDialog/types";
+import { CatppuccinLogoText } from "@lichtblick/suite-base/components/Catppuccin/CatppuccinLogo";
+import {
+  CatppuccinAccentSettings,
+  CatppuccinFlavorSettings,
+} from "@lichtblick/suite-base/components/Catppuccin/CatppuccinSettings";
 import CopyButton from "@lichtblick/suite-base/components/CopyButton";
 import { ExperimentalFeatureSettings } from "@lichtblick/suite-base/components/ExperimentalFeatureSettings";
 import ExtensionsSettings from "@lichtblick/suite-base/components/ExtensionsSettings";
-import LichtblickLogoText from "@lichtblick/suite-base/components/LichtblickLogoText";
 import Stack from "@lichtblick/suite-base/components/Stack";
 import { useAppContext } from "@lichtblick/suite-base/context/AppContext";
 import {
@@ -46,7 +50,6 @@ import isDesktopApp from "@lichtblick/suite-base/util/isDesktopApp";
 
 import {
   AutoUpdate,
-  ColorSchemeSettings,
   LanguageSettings,
   LaunchDefault,
   MessageFramerate,
@@ -122,7 +125,8 @@ export function AppSettingsDialog(
             })}
           >
             <Stack gap={2}>
-              <ColorSchemeSettings />
+              <CatppuccinFlavorSettings />
+              <CatppuccinAccentSettings />
               <TimezoneSettings />
               <TimeFormat orientation={smUp ? "horizontal" : "vertical"} />
               <MessageFramerate />
@@ -178,7 +182,7 @@ export function AppSettingsDialog(
           >
             <Stack gap={2} alignItems="flex-start">
               <header>
-                <LichtblickLogoText color="primary" className={classes.logo} />
+                <CatppuccinLogoText color="primary" className={classes.logo} />
               </header>
               <Stack direction="row" alignItems="center" gap={1}>
                 <Typography variant="body2">

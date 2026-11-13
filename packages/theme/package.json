@@ -13,6 +13,7 @@
   "homepage": "https://github.com/lichtblick-suite",
   "main": "./src/index",
   "devDependencies": {
+    "@catppuccin/palette": "1.8.0",
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.1",
     "@fluentui/react-icons": "2.0.308",

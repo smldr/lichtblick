@@ -15,6 +15,11 @@ export enum AppSetting {
   LANGUAGE = "language",
   DEFAULT_STEP_SIZE = "stepSize",
 
+  // Catppuccin
+  CATPPUCCIN_FLAVOR = "catppuccin.flavor",
+  CATPPUCCIN_SYSTEM_DARK_FLAVOR = "catppuccin.systemDarkFlavor",
+  CATPPUCCIN_ACCENT = "catppuccin.accent",
+
   // ROS
   ROS_PACKAGE_PATH = "ros.ros_package_path",
   ENABLE_NEW_TOPNAV = "enableNewTopNav",

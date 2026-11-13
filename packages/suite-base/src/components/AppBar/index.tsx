@@ -20,7 +20,7 @@ import tc from "tinycolor2";
 import { makeStyles } from "tss-react/mui";
 
 import { AppSetting } from "@lichtblick/suite-base/AppSetting";
-import { LichtblickLogo } from "@lichtblick/suite-base/components/LichtblickLogo";
+import { CatppuccinLogo } from "@lichtblick/suite-base/components/Catppuccin/CatppuccinLogo";
 import { MemoryUseIndicator } from "@lichtblick/suite-base/components/MemoryUseIndicator";
 import Stack from "@lichtblick/suite-base/components/Stack";
 import { useAppContext } from "@lichtblick/suite-base/context/AppContext";
@@ -217,7 +217,7 @@ export function AppBar(props: AppBarProps): React.JSX.Element {
                   setAppMenuEl(event.currentTarget);
                 }}
               >
-                <LichtblickLogo fontSize="inherit" color="inherit" />
+                <CatppuccinLogo fontSize="inherit" color="inherit" />
                 <ChevronDown12Regular
                   className={classes.dropDownIcon}
                   primaryFill={theme.palette.appBar.text}

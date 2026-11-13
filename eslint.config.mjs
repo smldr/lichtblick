@@ -373,4 +373,16 @@ export default [
       "@lichtblick/license-header": "off",
     },
   },
+
+  // Lichtblick Catppuccin: these files are not authored by BMW, so they carry their
+  // own MPL-2.0 SPDX header instead of the upstream BMW copyright line.
+  {
+    files: [
+      "packages/theme/src/catppuccin/**",
+      "packages/suite-base/src/components/Catppuccin/**",
+    ],
+    rules: {
+      "@lichtblick/license-header": "off",
+    },
+  },
 ];

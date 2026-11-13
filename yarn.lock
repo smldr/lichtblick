@@ -1596,6 +1596,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@catppuccin/palette@npm:1.8.0":
+  version: 1.8.0
+  resolution: "@catppuccin/palette@npm:1.8.0"
+  checksum: 10/119cf3618dc5c5ea8f94bbca77fb93b338982082b2d2ceac35acf496c2d2ecb020e42ec209d93277dc013bfb87851359031f324a85a7bc35af23ec61c0833555
+  languageName: node
+  linkType: hard
+
 "@cspotcode/source-map-support@npm:^0.8.0":
   version: 0.8.1
   resolution: "@cspotcode/source-map-support@npm:0.8.1"
@@ -3841,6 +3848,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@lichtblick/theme@workspace:packages/theme"
   dependencies:
+    "@catppuccin/palette": "npm:1.8.0"
     "@emotion/react": "npm:11.14.0"
     "@emotion/styled": "npm:11.14.1"
     "@fluentui/react-icons": "npm:2.0.308"

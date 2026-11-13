@@ -7,6 +7,7 @@
 
 import { createTheme, Theme } from "@mui/material/styles";
 
+import { CatppuccinAccent, CatppuccinFlavor, catppuccinPalette } from "./catppuccin";
 import * as components from "./components";
 import * as palette from "./palette";
 import { typography } from "./typography";
@@ -22,10 +23,20 @@ declare module "@mui/material/styles" {
   }
 }
 
-export const createMuiTheme = (themePreference: ThemePreference): Theme =>
+export type CatppuccinThemeOptions = {
+  flavor: CatppuccinFlavor;
+  accent: CatppuccinAccent;
+};
+
+export const createMuiTheme = (
+  themePreference: ThemePreference,
+  catppuccin?: CatppuccinThemeOptions,
+): Theme =>
   createTheme({
     name: themePreference,
-    palette: palette[themePreference],
+    palette: catppuccin
+      ? catppuccinPalette(catppuccin.flavor, catppuccin.accent)
+      : palette[themePreference],
     shape: { borderRadius: 2 },
     typography,
     components,

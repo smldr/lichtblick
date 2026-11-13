@@ -42,6 +42,7 @@ import {
   TRANSFORM_STAMPED_DATATYPES,
 } from "@lichtblick/suite-base/panels/ThreeDeeRender/ros";
 import ThemeProvider from "@lichtblick/suite-base/theme/ThemeProvider";
+import { ctpColor, useCatppuccinSelection } from "@lichtblick/theme";
 
 import type { IRenderer, ImageModeConfig, RendererConfig, RendererSubscription } from "./IRenderer";
 import type { Path } from "./LayerErrors";
@@ -717,13 +718,16 @@ export function ThreeDeeRender(props: Readonly<ThreeDeeRenderProps>): React.JSX.
     }
   }, [currentTime, renderer, didSeek]);
 
-  // Keep the renderer colorScheme and backgroundColor up to date
+  // Keep the renderer colorScheme and backgroundColor up to date. Without a custom
+  // background color, the scene uses the Catppuccin flavor's Base color.
+  const { darkFlavor } = useCatppuccinSelection();
   useEffect(() => {
     if (colorScheme && renderer) {
-      renderer.setColorScheme(colorScheme, backgroundColor);
+      const flavorBackground = ctpColor(colorScheme === "dark" ? darkFlavor : "latte", "base");
+      renderer.setColorScheme(colorScheme, backgroundColor ?? flavorBackground);
       renderRef.current.needsRender = true;
     }
-  }, [backgroundColor, colorScheme, renderer]);
+  }, [backgroundColor, colorScheme, darkFlavor, renderer]);
 
   // Handle preloaded messages and render a frame if new messages are available
   // Should be called before `messages` is handled

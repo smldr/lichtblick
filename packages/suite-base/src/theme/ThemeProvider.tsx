@@ -11,7 +11,7 @@ import { ThemeProvider as MuiThemeProvider } from "@mui/material";
 import * as React from "react";
 import { useEffect, useLayoutEffect, useMemo } from "react";
 
-import { createMuiTheme } from "@lichtblick/theme";
+import { createMuiTheme, useCatppuccinSelection } from "@lichtblick/theme";
 
 // Make sure mui styles are loaded first so that our makeStyles customizations
 // take precedence.
@@ -37,7 +37,16 @@ export default function ThemeProvider({
     document.querySelector("#loading-styles")?.remove();
   }, [isDark]);
 
-  const muiTheme = useMemo(() => createMuiTheme(isDark ? "dark" : "light"), [isDark]);
+  // Light mode is always Catppuccin Latte; dark mode uses the selected dark flavor.
+  const { darkFlavor, accent } = useCatppuccinSelection();
+  const muiTheme = useMemo(
+    () =>
+      createMuiTheme(isDark ? "dark" : "light", {
+        flavor: isDark ? darkFlavor : "latte",
+        accent,
+      }),
+    [isDark, darkFlavor, accent],
+  );
 
   useLayoutEffect(() => {
     // Set the theme color to match the sidebar and playback bar
